@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Initialization &mdash; EXOTica 5.0-beta1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="XML Initialization" href="XML.html" />
+    <link rel="prev" title="Getting Started With Your Own Robot" href="Getting-Started-With-Your-Own-Robot.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EXOTica
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-python.html">Quickstart: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-cpp.html">Quickstart: C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-problems-and-solvers.html">Setting up Problems and Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-EXOTica.html">Using EXOTica</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Getting-Started-With-Your-Own-Robot.html">Getting Started With Your Own Robot</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Initialization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#finding-initializers">Finding Initializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initializer-layout">Initializer Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="XML.html">XML Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XML-Parsing.html">XML Parsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Manual-Initialization.html">Manual Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Common-Initialization-Step.html">Common Initialization Step</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-ROSlaunch.html">Setting up ROSlaunch</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Task_maps.html">Task Maps</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Code-Formatting.html">Code Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python-API.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference external" href="./doxygen_cpp/index.html#http://">Doxygen C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EXOTica</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Initialization</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="initialization">
+<h1>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h1>
+<p>Now that we have installed and set up EXOTica, we begin looking at solving motion plans.
+To do this, we must first initialize our problems and solvers.
+EXOTica can be added to a new or existing project; here we will start with a new project.</p>
+<p>Two primary steps need to be fulfilled when using EXOTica:
+Initialization and Usage. Initialization is required to set up the
+problem and the solver. The usage is where the problem is solved.</p>
+<p>The solving and usage of EXOTica is taken care of in your Python or C++ code.
+You can initialize your problem here too, or this can be done via a separate XML file.
+XML tends to be preferred, as it keeps your code clean and can be changed more easily without requiring recompilation (in the case of C++).
+We will look at how to achieve each of these in the next section, but first take note of
+where the initializers are stored.</p>
+<div class="section" id="finding-initializers">
+<h2>Finding Initializers<a class="headerlink" href="#finding-initializers" title="Permalink to this headline">¶</a></h2>
+<p>Initialization options for all problems and solvers can be found in the
+source code in the following locations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Problems</span><span class="p">:</span> <span class="n">exotica</span><span class="o">/</span><span class="n">exotica</span><span class="o">/</span><span class="n">init</span><span class="o">/&lt;</span><span class="n">ProblemName</span><span class="o">&gt;.</span><span class="ow">in</span>
+
+<span class="n">Solvers</span><span class="p">:</span> <span class="n">exotica</span><span class="o">/</span><span class="n">exotations</span><span class="o">/</span><span class="n">solvers</span><span class="o">/&lt;</span><span class="n">SolverName</span><span class="o">&gt;/</span><span class="n">init</span><span class="o">/&lt;</span><span class="n">SolverName</span><span class="o">&gt;.</span><span class="ow">in</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="initializer-layout">
+<h2>Initializer Layout<a class="headerlink" href="#initializer-layout" title="Permalink to this headline">¶</a></h2>
+<p>These <code class="docutils literal notranslate"><span class="pre">.in</span></code> files are laid out as follows:</p>
+<p>When we look at a problem initializer such as UnconstrainedEndPoseProblem initializer
+(exotica/exotica/init/UnconstrainedEndPoseProblem.in), we see a list of parameters
+that can be set when we initialize the problem.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&lt;!--UnconstrainedEndPoseProblem init options--&gt;
+
+extend &lt;exotica/PlanningProblem&gt;
+Optional Eigen::VectorXd <span class="nv">W</span> <span class="o">=</span> Eigen::VectorXd<span class="o">()</span><span class="p">;</span>
+Optional Eigen::VectorXd <span class="nv">Rho</span> <span class="o">=</span> Eigen::VectorXd<span class="o">()</span><span class="p">;</span>
+Optional Eigen::VectorXd <span class="nv">Goal</span> <span class="o">=</span> Eigen::VectorXd<span class="o">()</span><span class="p">;</span>
+Optional Eigen::VectorXd <span class="nv">NominalState</span> <span class="o">=</span> Eigen::VectorXd<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In this case, all the parameters are optional and will have default values assigned to them.
+We can change these parameters during initialization if required.</p>
+<p>All problem initializers also extend the <code class="docutils literal notranslate"><span class="pre">exotica/PlanningProblem</span></code> initializer, which adds extra
+parameters. This is seen below:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>include &lt;exotica/SceneInitializer&gt;
+extend &lt;exotica/Object&gt;
+Required exotica::Initializer PlanningScene<span class="p">;</span> <span class="c1"># SceneInitializer</span>
+Optional std::vector&lt;exotica::Initializer&gt; <span class="nv">Maps</span> <span class="o">=</span> std::vector&lt;exotica::Initializer&gt;<span class="o">()</span><span class="p">;</span>
+Optional Eigen::VectorXd <span class="nv">StartState</span> <span class="o">=</span> Eigen::VectorXd<span class="o">()</span><span class="p">;</span>
+Optional double <span class="nv">StartTime</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This requires us to specify as scene in which the solver will operate, as well as start states and
+task maps (which we will look at later). In all, after extending both the
+PlanningSceneInitializer and the Object initializer (which takes a name and debug argument),
+the whole initializer for our UnconstrainedEndPoseProblem looks like this:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>Required std::string Name;
+Optional bool Debug = false;
+Required exotica::Initializer PlanningScene; # SceneInitializer
+Optional std::vector<span class="nt">&lt;exotica::Initializer&gt;</span> Maps = std::vector<span class="nt">&lt;exotica::Initializer&gt;</span>();
+Optional Eigen::VectorXd StartState = Eigen::VectorXd();
+Optional double StartTime = 0;
+Optional Eigen::VectorXd W = Eigen::VectorXd();
+Optional Eigen::VectorXd Rho = Eigen::VectorXd();
+Optional Eigen::VectorXd Goal = Eigen::VectorXd();
+Optional Eigen::VectorXd NominalState = Eigen::VectorXd();
+</pre></div>
+</div>
+<p>This shows us that the very least that is required to initialize a problem is a name for the problem
+and the name of the scene that the problem operates in. Other problems are also laid out in a similar fashion. The optional elements offer a powerful customisation tool for out motion planner.</p>
+<p>Now we have seen the layout of the initializers, the next step is to use these options in initializing EXOTica,
+which can be done via <a class="reference external" href="XML.html">XML</a> or <a class="reference external" href="Manual-Initialisation.html">C++</a>. We will first look at XML initialization.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="XML.html" class="btn btn-neutral float-right" title="XML Initialization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Getting-Started-With-Your-Own-Robot.html" class="btn btn-neutral" title="Getting Started With Your Own Robot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Vladimir Ivan, Yiming Yang, Wolfgang Merkt, Michael Camilleri, Sethu Vijayakumar - and contributors.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'5.0-beta1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

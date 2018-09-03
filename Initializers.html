@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Initializers &mdash; EXOTica 5.0-beta1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Task Maps" href="Task_maps.html" />
+    <link rel="prev" title="Setting up ROSlaunch" href="Setting-up-ROSlaunch.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EXOTica
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-python.html">Quickstart: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-cpp.html">Quickstart: C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-problems-and-solvers.html">Setting up Problems and Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-EXOTica.html">Using EXOTica</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Getting-Started-With-Your-Own-Robot.html">Getting Started With Your Own Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initialization.html">Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XML.html">XML Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XML-Parsing.html">XML Parsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Manual-Initialization.html">Manual Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Common-Initialization-Step.html">Common Initialization Step</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-ROSlaunch.html">Setting up ROSlaunch</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Initializers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-core-class">Creating a core class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-specialized-initializers">Creating specialized initializers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#compiling-initializers">Compiling initializers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#initializing-exotica">Initializing EXOTica</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Task_maps.html">Task Maps</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Code-Formatting.html">Code Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python-API.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference external" href="./doxygen_cpp/index.html#http://">Doxygen C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EXOTica</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Initializers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="initializers">
+<h1>Initializers<a class="headerlink" href="#initializers" title="Permalink to this headline">¶</a></h1>
+<p>Initialization of core components is done via Initializers. An
+initializer is a collection of properties that each objects uses to
+initialize itself. These could be either required or optional. Each core
+class can get the value of these properties from its initializer, e.g. a
+solver may require number of iterations or a convergence rate.</p>
+<p>The initializers may be created manually (c++), from config files (XML)
+or using wrappers (python). These wrappers provide a useful abstractions
+for creating and initializing EXOTica core components directly from
+scripts or configuration files.</p>
+<div class="section" id="creating-a-core-class">
+<h2>Creating a core class<a class="headerlink" href="#creating-a-core-class" title="Permalink to this headline">¶</a></h2>
+<p>A core class is a class derived from <code class="docutils literal notranslate"><span class="pre">MotionSolver</span></code>,
+<code class="docutils literal notranslate"><span class="pre">PlanningProblem</span></code>, <code class="docutils literal notranslate"><span class="pre">TaskDefinition</span></code> or <code class="docutils literal notranslate"><span class="pre">TaskMap</span></code>. For the class to
+be valid, it also have to inherit from <code class="docutils literal notranslate"><span class="pre">Instantiable&lt;&gt;</span></code> templated
+class, e.g.:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">JointLimit</span><span class="o">:</span> <span class="k">public</span> <span class="n">TaskMap</span><span class="p">,</span> <span class="k">public</span> <span class="n">Instantiable</span><span class="o">&lt;</span><span class="n">JointLimitInitializer</span><span class="o">&gt;</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="n">Instantiate</span><span class="p">(</span><span class="n">JointLimitInitializer</span><span class="o">&amp;</span> <span class="n">init</span><span class="p">);</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In the case above, <code class="docutils literal notranslate"><span class="pre">JointLimitInitializer</span></code> is the template parameter
+and the type used for initialization. You can then use the parameters of
+<code class="docutils literal notranslate"><span class="pre">JointLimitInitializer</span></code> to initialize the <code class="docutils literal notranslate"><span class="pre">JointLimit</span></code> class:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">JointLimit</span><span class="o">::</span><span class="n">Instantiate</span><span class="p">(</span><span class="n">JointLimitInitializer</span><span class="o">&amp;</span> <span class="n">init</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">percent</span> <span class="o">=</span> <span class="n">init</span><span class="p">.</span><span class="n">SafePercentage</span><span class="p">;</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The property <code class="docutils literal notranslate"><span class="pre">init.SafePercentage</span></code> is of type <code class="docutils literal notranslate"><span class="pre">double</span></code> and it can be
+directly used as such.</p>
+<p>There are two types of initializers: specialized (e.g.
+<code class="docutils literal notranslate"><span class="pre">exotica::JointLimitInitializer</span></code>) and generic
+(<code class="docutils literal notranslate"><span class="pre">exotica::Initializer</span></code>). The generic initializer contains a
+collection of loosely typed parameters exploiting the <code class="docutils literal notranslate"><span class="pre">boost::any</span></code>
+class. These initializers are used for parsing XML, python and other
+data structures and they allow you to create an initializer on run time,
+as opposed to compiling a specific datatype on compile time (this is
+useful for reflection and creating wrappers for python and Matlab).</p>
+<p>Specialized initializers are typeset and they are used within your class
+to easily access the parameters a class needs to set itself up.
+Conversion from generic to specialized initializers is handled by
+EXOTica.</p>
+</div>
+<div class="section" id="creating-specialized-initializers">
+<h2>Creating specialized initializers<a class="headerlink" href="#creating-specialized-initializers" title="Permalink to this headline">¶</a></h2>
+<p>Each core class requires some properties to initialize successfully and
+some properties that are optional. The way to declare properties, their
+default values and whether are required or optional is to create a
+specialized initializer type. This can be done by defining it in a
+initializer file, e.g. <code class="docutils literal notranslate"><span class="pre">init/JointLimit.in</span></code> contains:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extend</span> <span class="o">&lt;</span><span class="n">exotica</span><span class="o">/</span><span class="n">TaskMap</span><span class="o">&gt;</span>
+<span class="n">Required</span> <span class="n">double</span> <span class="n">SafePercentage</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The file name (excluding the extension <code class="docutils literal notranslate"><span class="pre">.in</span></code>) defines the name of the
+type: <code class="docutils literal notranslate"><span class="pre">JointLimit.in</span></code>&gt;&gt;<code class="docutils literal notranslate"><span class="pre">exotica::JointLimitInitializer</span></code>. The
+syntax is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Comments</span> <span class="n">start</span> <span class="k">with</span> <span class="s2">&quot;//&quot;</span>
+<span class="n">extend</span> <span class="o">&lt;</span><span class="n">exotica</span><span class="o">/</span><span class="n">PlanningProblem</span><span class="o">&gt;</span> <span class="o">//</span> <span class="n">Extend</span> <span class="n">existing</span> <span class="n">initializers</span> <span class="p">(</span><span class="n">weak</span> <span class="n">inheritance</span><span class="p">)</span>
+<span class="n">Required</span> <span class="n">double</span> <span class="n">Tolerance</span><span class="p">;</span> <span class="o">//</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">required</span> <span class="nb">property</span> <span class="p">(</span><span class="n">no</span> <span class="n">default</span> <span class="n">value</span><span class="p">)</span>
+<span class="n">Required</span> <span class="n">Eigen</span><span class="p">::</span><span class="n">VectorXd</span> <span class="n">W</span><span class="p">;</span> <span class="o">//</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">required</span> <span class="nb">property</span> <span class="k">with</span> <span class="n">included</span> <span class="nb">type</span>
+<span class="n">Required</span> <span class="n">Initializer</span> <span class="n">EndEffectorFrame</span><span class="p">;</span> <span class="o">//</span> <span class="n">Stores</span> <span class="n">an</span> <span class="n">initializer</span> <span class="nb">type</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">LimbInitilizer</span> <span class="k">for</span> <span class="n">defining</span> <span class="n">spatial</span> <span class="n">frames</span><span class="o">.</span>
+<span class="n">Optional</span> <span class="nb">int</span> <span class="n">T</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">//</span> <span class="n">Create</span> <span class="n">an</span> <span class="n">optional</span> <span class="nb">property</span> <span class="p">(</span><span class="n">default</span> <span class="n">value</span> <span class="n">provided</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="compiling-initializers">
+<h3>Compiling initializers<a class="headerlink" href="#compiling-initializers" title="Permalink to this headline">¶</a></h3>
+<p>To compile a package defining new initializers, add the following lines
+to your CMakeLists.txt:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span>project(MyProjectName)
+
+...
+
+catkin_package(
+# ... catkin package stuff
+)
+
+# Add all names of defined initializers (excluding the *.in extension)
+AddInitializer(IKsolver)
+
+# Generate initializers
+GenInitializers()
+
+...
+
+# Add initializers dependency to your executable
+add_dependencies(MyExecutableName MyProjectName_initializers)
+</pre></div>
+</div>
+<p>You may want to create initializers for core classes, but can also use
+them for setting up other classes. See <code class="docutils literal notranslate"><span class="pre">exotica::OMPLImpSolver</span></code> for an
+example.</p>
+</div>
+</div>
+<div class="section" id="initializing-exotica">
+<h2>Initializing EXOTica<a class="headerlink" href="#initializing-exotica" title="Permalink to this headline">¶</a></h2>
+<p>EXOTica can now be set up using initializers alone. You can either
+create these manually or using loaders. See the <code class="docutils literal notranslate"><span class="pre">exotica_examples</span></code>
+package for examples of initializing exotica.</p>
+<p>See <code class="docutils literal notranslate"><span class="pre">exotica_examples/src/generic.cpp</span></code> for an example of initializing
+exotica from c++ without including any of the specialized headers.</p>
+<p>See <code class="docutils literal notranslate"><span class="pre">exotica_examples/src/xml.cpp</span></code> for an example loading exotica from
+XML. This is similar to the way EXOTica was initialized in the past. The
+XML format has changed slightly though. See
+<code class="docutils literal notranslate"><span class="pre">exotica_examples/resources/ik_solver_demo.xml</span></code> for an example of the
+new format.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Task_maps.html" class="btn btn-neutral float-right" title="Task Maps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Setting-up-ROSlaunch.html" class="btn btn-neutral" title="Setting up ROSlaunch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Vladimir Ivan, Yiming Yang, Wolfgang Merkt, Michael Camilleri, Sethu Vijayakumar - and contributors.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'5.0-beta1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

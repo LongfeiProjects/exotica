@@ -1,0 +1,413 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>EXOTica &mdash; EXOTica 5.0-beta1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="Installation.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> EXOTica
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-python.html">Quickstart: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-cpp.html">Quickstart: C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-problems-and-solvers.html">Setting up Problems and Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-EXOTica.html">Using EXOTica</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Getting-Started-With-Your-Own-Robot.html">Getting Started With Your Own Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initialization.html">Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XML.html">XML Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XML-Parsing.html">XML Parsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Manual-Initialization.html">Manual Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Common-Initialization-Step.html">Common Initialization Step</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-ROSlaunch.html">Setting up ROSlaunch</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Task_maps.html">Task Maps</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Code-Formatting.html">Code Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python-API.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference external" href="./doxygen_cpp/index.html#http://">Doxygen C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">EXOTica</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>EXOTica</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exotica">
+<h1>EXOTica<a class="headerlink" href="#exotica" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="_images/EXOTica_logo.png"><img alt="_images/EXOTica_logo.png" class="align-right" src="_images/EXOTica_logo.png" style="width: 40%;" /></a>
+<p>For home page go
+<a class="reference external" href="http://wcms.inf.ed.ac.uk/ipab/slmc/research/EXOTica">here</a>.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="Installation.html">Installation</a></li>
+<li><a class="reference external" href="Quickstart-python.html">Quick Start: Python</a></li>
+<li><a class="reference external" href="Quickstart-cpp.html">Quick Start: C++</a></li>
+<li><a class="reference external" href="Setting-up-problems-and-solvers.html">Setting up Problems and Solvers</a></li>
+<li><a class="reference external" href="Using-EXOTica.html">Using EXOTica</a></li>
+<li><a class="reference external" href="Getting-Started-With-Your-Own-Robot.html">Getting Started With Your Own Robot</a></li>
+<li><a class="reference external" href="Initialisation.html">Initialization</a><ul>
+<li>XML<ul>
+<li><a class="reference external" href="XML.html">XML Initialization</a></li>
+<li><a class="reference external" href="XML-Parsing.html">XML Parsing</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="Manual-Initialisation.html">Manual Initialization</a></li>
+<li><a class="reference external" href="Common-Initialisation-Step.html">Common Initialization Step</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="Task_maps.html">Task Maps</a></li>
+<li><a class="reference external" href="Setting-up-ROSlaunch.html">Setting up ROSlaunch</a></li>
+</ul>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#id1">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Installation.html#demos">Demos</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
+<p>In this section we’ll explore the basics of setting up and using
+EXOTica with the included KUKA LWR_Simplified robot.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-python.html">Quickstart: Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Quickstart-python.html#quick-ik-trajectories-without-ros">Quick IK trajectories without ROS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quickstart-python.html#setting-start-position">Setting Start Position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quickstart-python.html#setting-the-goal">Setting the Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quickstart-python.html#expected-output">Expected Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quickstart-python.html#problem-and-solution-setup">Problem and Solution Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quickstart-python.html#alternative-python-initialization">Alternative Python Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quickstart-python.html#quick-ik-trajectories-with-ros">Quick IK trajectories with ROS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quickstart-python.html#visualization">Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-cpp.html">Quickstart: C++</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Quickstart-cpp.html#running-example-code">Running Example Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quickstart-cpp.html#expected-output">Expected output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quickstart-cpp.html#quick-solver-setup">Quick Solver Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quickstart-cpp.html#quick-xml-initialization">Quick XML Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Quickstart-cpp.html#solving-motion-plan">Solving Motion Plan</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-problems-and-solvers.html">Setting up Problems and Solvers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-problems-and-solvers.html#including-solvers-and-task-maps">Including Solvers and Task Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-problems-and-solvers.html#ros-initialization">ROS Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-problems-and-solvers.html#scene-setup">Scene Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-problems-and-solvers.html#map-setup">Map Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-problems-and-solvers.html#problem-and-solver-initialization">Problem and Solver Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-problems-and-solvers.html#sending-problem-to-solvers">Sending Problem to Solvers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Using-EXOTica.html">Using EXOTica</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Using-EXOTica.html#setting-start-position">Setting Start Position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Using-EXOTica.html#solution-container">Solution Container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Using-EXOTica.html#goal-setting">Goal Setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Using-EXOTica.html#solving-problems">Solving Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Using-EXOTica.html#solution-format">Solution Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Using-EXOTica.html#publishing-to-rviz">Publishing to RVIZ</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="advanced">
+<h2>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h2>
+<p>With the advanced section, we look at different methods of initializing
+EXOTica and using it with your own robot.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Getting-Started-With-Your-Own-Robot.html">Getting Started With Your Own Robot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Getting-Started-With-Your-Own-Robot.html#urdf-file">URDF File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Getting-Started-With-Your-Own-Robot.html#srdf-file">SRDF File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Getting-Started-With-Your-Own-Robot.html#cmakelists-txt-package-xml">CMakeLists.txt &amp; package.xml</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Initialization.html">Initialization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Initialization.html#finding-initializers">Finding Initializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Initialization.html#initializer-layout">Initializer Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="XML.html">XML Initialization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="XML.html#solver-setup">Solver Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="XML.html#problem-setup">Problem Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="XML.html#planning-scene">Planning Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="XML.html#maps">Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="XML.html#problem-parameters">Problem Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="XML-Parsing.html">XML Parsing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="XML-Parsing.html#exotica-server">EXOTica Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="XML-Parsing.html#xml-loader">XML Loader</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Manual-Initialization.html">Manual Initialization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Manual-Initialization.html#initializer-headers">Initializer Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Manual-Initialization.html#scene-initialization">Scene Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Manual-Initialization.html#map-initialization">Map Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Manual-Initialization.html#problem-initialization">Problem Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Manual-Initialization.html#solver">Solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Manual-Initialization.html#solver-options">Solver Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Common-Initialization-Step.html">Common Initialization Step</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Common-Initialization-Step.html#sending-problems-to-solvers">Sending Problems to Solvers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Common-Initialization-Step.html#problem-pointer-setup">Problem Pointer Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-ROSlaunch.html">Setting up ROSlaunch</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-ROSlaunch.html#generic-roslaunch-structure">Generic ROSlaunch Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-ROSlaunch.html#debug-param">Debug Param</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-ROSlaunch.html#urdf-and-srdf-specification">URDF and SRDF specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-ROSlaunch.html#specify-exotica-code-location">Specify EXOTica code location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-ROSlaunch.html#starting-rviz">Starting RVIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Setting-up-ROSlaunch.html#xml-parameters">XML Parameters</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="core-components-concepts">
+<h2>Core Components/Concepts<a class="headerlink" href="#core-components-concepts" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Initializers.html">Initializers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Initializers.html#creating-a-core-class">Creating a core class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Initializers.html#creating-specialized-initializers">Creating specialized initializers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Initializers.html#initializing-exotica">Initializing EXOTica</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Task_maps.html">Task Maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Task_maps.html#initializing-task-maps">Initializing task maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Task_maps.html#using-task-maps">Using Task Maps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="additional-information-and-apis">
+<h2>Additional Information and APIs<a class="headerlink" href="#additional-information-and-apis" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Code-Formatting.html">Code Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python-API.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference external" href="./doxygen_cpp/index.html#http://">Doxygen C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Documentation.html#c-api-documentation">C++ API Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Vladimir Ivan, Yiming Yang, Wolfgang Merkt, Michael Camilleri, Sethu Vijayakumar - and contributors.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'5.0-beta1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

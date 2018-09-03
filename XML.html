@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>XML Initialization &mdash; EXOTica 5.0-beta1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="XML Parsing" href="XML-Parsing.html" />
+    <link rel="prev" title="Initialization" href="Initialization.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EXOTica
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-python.html">Quickstart: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-cpp.html">Quickstart: C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-problems-and-solvers.html">Setting up Problems and Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-EXOTica.html">Using EXOTica</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Getting-Started-With-Your-Own-Robot.html">Getting Started With Your Own Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initialization.html">Initialization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">XML Initialization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#solver-setup">Solver Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#problem-setup">Problem Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#planning-scene">Planning Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maps">Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#problem-parameters">Problem Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#next-step">Next Step</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="XML-Parsing.html">XML Parsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Manual-Initialization.html">Manual Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Common-Initialization-Step.html">Common Initialization Step</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-ROSlaunch.html">Setting up ROSlaunch</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Task_maps.html">Task Maps</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Code-Formatting.html">Code Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python-API.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference external" href="./doxygen_cpp/index.html#http://">Doxygen C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EXOTica</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>XML Initialization</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="xml-initialization">
+<h1>XML Initialization<a class="headerlink" href="#xml-initialization" title="Permalink to this headline">¶</a></h1>
+<p>This section of the tutorial will demonstrate how to initialize EXOTica
+using XML and the related C++ code that is needed to parse the XML file.
+We will be using the XML file under the
+<a class="reference external" href="https://github.com/ipab-slmc/exotica/blob/master/examples/exotica_examples/resources/configs/ik_solver_demo.xml">IK_Solver</a>
+file and is shown below:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
+<span class="nt">&lt;IKSolverDemoConfig&gt;</span>
+
+  <span class="nt">&lt;IKsolver</span> <span class="na">Name=</span><span class="s">&quot;MySolver&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;MaxIterations&gt;</span>1<span class="nt">&lt;/MaxIterations&gt;</span>
+    <span class="nt">&lt;MaxStep&gt;</span>0.1<span class="nt">&lt;/MaxStep&gt;</span>
+    <span class="nt">&lt;Tolerance&gt;</span>1e-5<span class="nt">&lt;/Tolerance&gt;</span>
+    <span class="nt">&lt;Alpha&gt;</span>1.0<span class="nt">&lt;/Alpha&gt;</span>
+    <span class="nt">&lt;C&gt;</span>1e-3<span class="nt">&lt;/C&gt;</span>
+  <span class="nt">&lt;/IKsolver&gt;</span>
+
+  <span class="nt">&lt;UnconstrainedEndPoseProblem</span> <span class="na">Name=</span><span class="s">&quot;MyProblem&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;PlanningScene&gt;</span>
+      <span class="nt">&lt;Scene&gt;</span>
+        <span class="nt">&lt;JointGroup&gt;</span>arm<span class="nt">&lt;/JointGroup&gt;</span>
+        <span class="nt">&lt;URDF&gt;</span>{exotica_examples}/resources/robots/lwr_simplified.urdf<span class="nt">&lt;/URDF&gt;</span>
+        <span class="nt">&lt;SRDF&gt;</span>{exotica_examples}/resources/robots/lwr_simplified.srdf<span class="nt">&lt;/SRDF&gt;</span>
+      <span class="nt">&lt;/Scene&gt;</span>
+    <span class="nt">&lt;/PlanningScene&gt;</span>
+
+    <span class="nt">&lt;Maps&gt;</span>
+      <span class="nt">&lt;EffFrame</span> <span class="na">Name=</span><span class="s">&quot;Position&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;EndEffector&gt;</span>
+            <span class="nt">&lt;Frame</span> <span class="na">Link=</span><span class="s">&quot;lwr_arm_6_link&quot;</span> <span class="na">LinkOffset=</span><span class="s">&quot;0 0 0 0.7071067811865476 -4.3297802811774664e-17  0.7071067811865475 4.3297802811774664e-17&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/EndEffector&gt;</span>
+      <span class="nt">&lt;/EffFrame&gt;</span>
+    <span class="nt">&lt;/Maps&gt;</span>
+    <span class="nt">&lt;StartState&gt;</span>0 0 0 0 0 0 0<span class="nt">&lt;/StartState&gt;</span>
+    <span class="nt">&lt;NominalState&gt;</span>0 0 0 0 0 0 0<span class="nt">&lt;/NominalState&gt;</span>
+    <span class="nt">&lt;W&gt;</span> 7 6 5 4 3 2 1 <span class="nt">&lt;/W&gt;</span>
+  <span class="nt">&lt;/UnconstrainedEndPoseProblem&gt;</span>
+
+<span class="nt">&lt;/IKSolverDemoConfig&gt;</span>
+</pre></div>
+</div>
+<p class="rubric">CODE EXPLAINED</p>
+<p>In the code we see:
+* the initialization of the <code class="docutils literal notranslate"><span class="pre">IKSolver</span></code> and its parameters (e.g. <code class="docutils literal notranslate"><span class="pre">MaxIterations</span></code>,<code class="docutils literal notranslate"><span class="pre">MaxStep</span></code>) set
+* a problem (<code class="docutils literal notranslate"><span class="pre">UnconstrainedEndPoseProblem</span></code>) is specified and  necessary parameters input.
+- Within the problem, a <code class="docutils literal notranslate"><span class="pre">PlanningScene</span></code> and <code class="docutils literal notranslate"><span class="pre">Maps</span></code> are initialized in addition to the problem parameters.</p>
+<p>Let’s look a little more closely into the solver and problem setup.</p>
+<div class="section" id="solver-setup">
+<h2>Solver Setup<a class="headerlink" href="#solver-setup" title="Permalink to this headline">¶</a></h2>
+<p>The solver is initialized by identifying the solver and giving it a name
+(which will be used later); here we use the name “MySolver” : <code class="docutils literal notranslate"><span class="pre">&lt;IKsolver</span> <span class="pre">Name=&quot;MySolver&quot;&gt;</span></code>
+Solver options are then specified:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;MaxIterations&gt;</span>1<span class="nt">&lt;/MaxIterations&gt;</span>
+<span class="nt">&lt;MaxStep&gt;</span>0.1<span class="nt">&lt;/MaxStep&gt;</span>
+<span class="nt">&lt;Tolerance&gt;</span>1e-5<span class="nt">&lt;/Tolerance&gt;</span>
+<span class="nt">&lt;Alpha&gt;</span>1.0<span class="nt">&lt;/Alpha&gt;</span>
+<span class="nt">&lt;C&gt;</span>1e-3<span class="nt">&lt;/C&gt;</span>
+</pre></div>
+</div>
+<p>The parameters in this case are optional, but each solver has its own
+set of initialization parameters, as detailed on the <a class="reference external" href="Initialisation.html">previous page</a>
+and the function of each can be found in the literature.</p>
+</div>
+<div class="section" id="problem-setup">
+<h2>Problem Setup<a class="headerlink" href="#problem-setup" title="Permalink to this headline">¶</a></h2>
+<p>Initialization of the problem is wrapped in the XML tag named after the
+solver. Here we use the <code class="docutils literal notranslate"><span class="pre">UnconstrainedEndPoseProblem</span></code>.</p>
+<p>Inside this problem, we have the:
+* <code class="docutils literal notranslate"><span class="pre">PlanningScene</span></code>
+* <code class="docutils literal notranslate"><span class="pre">Maps</span></code>
+* Solver Parameters (e.g. <code class="docutils literal notranslate"><span class="pre">StartState</span></code>, <code class="docutils literal notranslate"><span class="pre">NominalState</span></code> <code class="docutils literal notranslate"><span class="pre">W</span></code>).</p>
+</div>
+<div class="section" id="planning-scene">
+<h2>Planning Scene<a class="headerlink" href="#planning-scene" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>A <code class="docutils literal notranslate"><span class="pre">PlanningScene</span></code> always contains:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://github.com/ipab-slmc/exotica/blob/master/examples/exotica_examples/resources/robots/lwr_simplified.urdf">URDF</a></li>
+<li><a class="reference external" href="https://github.com/ipab-slmc/exotica/blob/master/examples/exotica_examples/resources/robots/lwr_simplified.srdf">SRDF</a></li>
+<li><code class="docutils literal notranslate"><span class="pre">JointGroup</span></code> which corresponds to the planning group specified in the SRDF file, the part we are interested in is detailed below:</li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>...
+<span class="nt">&lt;group</span> <span class="na">name=</span><span class="s">&quot;arm&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;chain</span> <span class="na">base_link=</span><span class="s">&quot;lwr_arm_0_link&quot;</span> <span class="na">tip_link=</span><span class="s">&quot;lwr_arm_7_link&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/group&gt;</span>
+...
+</pre></div>
+</div>
+<p>We will use this <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">name</span></code> for our initialisation:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;JointGroup&gt;</span>arm<span class="nt">&lt;/JointGroup&gt;</span>
+</pre></div>
+</div>
+<p>This will direct EXOTica to the joint properties for the robot you are
+using.</p>
+</div>
+<div class="section" id="maps">
+<h2>Maps<a class="headerlink" href="#maps" title="Permalink to this headline">¶</a></h2>
+<p>Maps refers to the <code class="docutils literal notranslate"><span class="pre">task</span> <span class="pre">maps</span></code> of a problem, they provide a mapping from configuration space to task space
+which are useful for fulfilling several tasks, such as specifying goals and avoiding obstacles.
+You can read more about task maps in a <a class="reference external" href="Task_maps.html">later section</a> .</p>
+<p>For now we are only interested in reaching an end effector goal, so we will use the <code class="docutils literal notranslate"><span class="pre">EffFrame</span></code> task map,
+which allows us specify the name of the end effector from the URDF file, which will be the focus when we
+try to reach a an end effector goal, as we are doing here.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Maps&gt;</span>
+  <span class="nt">&lt;EffFrame</span> <span class="na">Name=</span><span class="s">&quot;Position&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;EndEffector&gt;</span>
+        <span class="nt">&lt;Frame</span> <span class="na">Link=</span><span class="s">&quot;lwr_arm_6_link&quot;</span> <span class="na">LinkOffset=</span><span class="s">&quot;0 0 0 0.7071067811865476 -4.3297802811774664e-17  0.7071067811865475 4.3297802811774664e-17&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/EndEffector&gt;</span>
+  <span class="nt">&lt;/EffFrame&gt;</span>
+<span class="nt">&lt;/Maps&gt;</span>
+</pre></div>
+</div>
+<p>This specifies the maps we are using in the problem. Here we use only EffFrame, but you can add multiple task maps between the <code class="docutils literal notranslate"><span class="pre">Maps</span></code> tags.</p>
+<p>Within the EffFrame initialisation, we give the map a name, we specify the name of the link be be considered as the end effector as well as an optional offset distance.</p>
+<p><em>NOTE - the name of the end effector link must match that in the URDF
+and SRDF files</em></p>
+</div>
+<div class="section" id="problem-parameters">
+<h2>Problem Parameters<a class="headerlink" href="#problem-parameters" title="Permalink to this headline">¶</a></h2>
+<p>Finally, we setup the parameters of this problem. Parameters vary for each problem, but here we see the parameters <code class="docutils literal notranslate"><span class="pre">W</span></code>, <code class="docutils literal notranslate"><span class="pre">StartState</span></code> and <code class="docutils literal notranslate"><span class="pre">NominalState</span></code>, which
+we set to the appropriate values. More information about these parameters can be found in the EXOTica chapter.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">W</span></code> vector weights the joints of your robot according to the cost of moving each one.
+This vector must be the same size as the number of the number of DOF of your robot.</p>
+<div class="section" id="next-step">
+<h3>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">¶</a></h3>
+<p>Now the XML initialisation has been completed, we can begin parsing it
+to be used in EXOTica in the <a class="reference external" href="XML-Parsing.html">next
+step</a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="XML-Parsing.html" class="btn btn-neutral float-right" title="XML Parsing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Initialization.html" class="btn btn-neutral" title="Initialization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Vladimir Ivan, Yiming Yang, Wolfgang Merkt, Michael Camilleri, Sethu Vijayakumar - and contributors.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'5.0-beta1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

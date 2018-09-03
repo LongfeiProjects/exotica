@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Setting up Problems and Solvers &mdash; EXOTica 5.0-beta1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Using EXOTica" href="Using-EXOTica.html" />
+    <link rel="prev" title="Quickstart: C++" href="Quickstart-cpp.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EXOTica
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-python.html">Quickstart: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-cpp.html">Quickstart: C++</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setting up Problems and Solvers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#including-solvers-and-task-maps">Including Solvers and Task Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ros-initialization">ROS Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scene-setup">Scene Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#map-setup">Map Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#problem-and-solver-initialization">Problem and Solver Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sending-problem-to-solvers">Sending Problem to Solvers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Using-EXOTica.html">Using EXOTica</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Getting-Started-With-Your-Own-Robot.html">Getting Started With Your Own Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initialization.html">Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XML.html">XML Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XML-Parsing.html">XML Parsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Manual-Initialization.html">Manual Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Common-Initialization-Step.html">Common Initialization Step</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-ROSlaunch.html">Setting up ROSlaunch</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Task_maps.html">Task Maps</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Code-Formatting.html">Code Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python-API.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference external" href="./doxygen_cpp/index.html#http://">Doxygen C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EXOTica</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Setting up Problems and Solvers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="setting-up-problems-and-solvers">
+<h1>Setting up Problems and Solvers<a class="headerlink" href="#setting-up-problems-and-solvers" title="Permalink to this headline">¶</a></h1>
+<p>To solve motion plans with EXOTica, we create a problem,
+send it to the solver and then solve said problem. We will look now in more
+detail about setting up problems, solvers.</p>
+<p>Here we will run through the initialization of a problem, setting up problems,
+solvers and solving for motion plans. If you prefer to initialize using XML,
+skip to the problem setup part of the tutorial.</p>
+<p>For this tutorial, we will use the <a class="reference external" href="https://github.com/ipab-slmc/exotica/blob/master/examples/exotica_examples/src/manual.cpp">manual.cpp</a>
+example file as a guide. The code is displayed below.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;exotica/Exotica.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// Manual initialization requires dependency on specific solvers and task maps:</span>
+<span class="cp">#include</span> <span class="cpf">&lt;ik_solver/IKsolverInitializer.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;task_map/EffFrameInitializer.h&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">exotica</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">run</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Server</span><span class="o">::</span><span class="n">InitRos</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">ros</span><span class="o">::</span><span class="n">NodeHandle</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">ros</span><span class="o">::</span><span class="n">NodeHandle</span><span class="p">(</span><span class="s">&quot;~&quot;</span><span class="p">)));</span>
+
+    <span class="c1">// Scene using joint group &#39;arm&#39;</span>
+    <span class="n">SceneInitializer</span> <span class="n">scene</span><span class="p">(</span><span class="s">&quot;MyScene&quot;</span><span class="p">,</span> <span class="s">&quot;arm&quot;</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;{exotica_examples}/resources/robots/lwr_simplified.urdf&quot;</span><span class="p">,</span> <span class="s">&quot;{exotica_examples}/resources/robots/lwr_simplified.srdf&quot;</span><span class="p">);</span>
+    <span class="c1">// End-effector task map with two position frames</span>
+    <span class="n">EffFrameInitializer</span> <span class="n">map</span><span class="p">(</span><span class="s">&quot;Position&quot;</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span>
+                            <span class="p">{</span><span class="n">FrameInitializer</span><span class="p">(</span><span class="s">&quot;lwr_arm_6_link&quot;</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorTransform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.7071067811865476</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.3297802811774664e-17</span><span class="p">,</span> <span class="mf">0.7071067811865475</span><span class="p">,</span> <span class="mf">4.3297802811774664e-17</span><span class="p">))});</span>
+    <span class="c1">// Create a task using the map above (goal will be specified later)</span>
+    <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="n">W</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+    <span class="n">W</span> <span class="o">&lt;&lt;</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="n">UnconstrainedEndPoseProblemInitializer</span> <span class="n">problem</span><span class="p">(</span><span class="s">&quot;MyProblem&quot;</span><span class="p">,</span> <span class="n">scene</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="p">{</span><span class="n">map</span><span class="p">},</span> <span class="n">W</span><span class="p">);</span>
+    <span class="n">IKsolverInitializer</span> <span class="n">solver</span><span class="p">(</span><span class="s">&quot;MySolver&quot;</span><span class="p">);</span>
+    <span class="n">solver</span><span class="p">.</span><span class="n">C</span> <span class="o">=</span> <span class="mf">1e-3</span><span class="p">;</span>
+    <span class="n">solver</span><span class="p">.</span><span class="n">MaxIterations</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">solver</span><span class="p">.</span><span class="n">MaxStep</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
+
+    <span class="n">HIGHLIGHT_NAMED</span><span class="p">(</span><span class="s">&quot;ManualLoader&quot;</span><span class="p">,</span> <span class="s">&quot;Loaded from a hardcoded specialized initializer.&quot;</span><span class="p">);</span>
+
+    <span class="c1">// Initialize</span>
+
+    <span class="n">PlanningProblem_ptr</span> <span class="n">any_problem</span> <span class="o">=</span> <span class="n">Setup</span><span class="o">::</span><span class="n">createProblem</span><span class="p">(</span><span class="n">problem</span><span class="p">);</span>
+    <span class="n">MotionSolver_ptr</span> <span class="n">any_solver</span> <span class="o">=</span> <span class="n">Setup</span><span class="o">::</span><span class="n">createSolver</span><span class="p">(</span><span class="n">solver</span><span class="p">);</span>
+
+    <span class="c1">// Assign the problem to the solver</span>
+    <span class="n">any_solver</span><span class="o">-&gt;</span><span class="n">specifyProblem</span><span class="p">(</span><span class="n">any_problem</span><span class="p">);</span>
+    <span class="n">UnconstrainedEndPoseProblem_ptr</span> <span class="n">my_problem</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">static_pointer_cast</span><span class="o">&lt;</span><span class="n">UnconstrainedEndPoseProblem</span><span class="o">&gt;</span><span class="p">(</span><span class="n">any_problem</span><span class="p">);</span>
+
+    <span class="c1">// Create the initial configuration</span>
+    <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="n">q</span> <span class="o">=</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span><span class="o">::</span><span class="n">Zero</span><span class="p">(</span><span class="n">any_problem</span><span class="o">-&gt;</span><span class="n">N</span><span class="p">);</span>
+    <span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixXd</span> <span class="n">solution</span><span class="p">;</span>
+
+    <span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Calling solve() in an infinite loop&quot;</span><span class="p">);</span>
+
+    <span class="kt">double</span> <span class="n">t</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="n">ros</span><span class="o">::</span><span class="n">Rate</span> <span class="n">loop_rate</span><span class="p">(</span><span class="mf">500.0</span><span class="p">);</span>
+    <span class="n">ros</span><span class="o">::</span><span class="n">WallTime</span> <span class="n">init_time</span> <span class="o">=</span> <span class="n">ros</span><span class="o">::</span><span class="n">WallTime</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">ros</span><span class="o">::</span><span class="n">ok</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">ros</span><span class="o">::</span><span class="n">WallTime</span> <span class="n">start_time</span> <span class="o">=</span> <span class="n">ros</span><span class="o">::</span><span class="n">WallTime</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+
+        <span class="c1">// Update the goal if necessary</span>
+        <span class="c1">// e.g. figure eight</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">ros</span><span class="o">::</span><span class="n">Duration</span><span class="p">((</span><span class="n">ros</span><span class="o">::</span><span class="n">WallTime</span><span class="o">::</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">init_time</span><span class="p">).</span><span class="n">toSec</span><span class="p">()).</span><span class="n">toSec</span><span class="p">();</span>
+        <span class="n">my_problem</span><span class="o">-&gt;</span><span class="n">y</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.6</span><span class="p">,</span>
+                        <span class="o">-</span><span class="mf">0.1</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">M_PI</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">,</span>
+                        <span class="mf">0.5</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="n">M_PI</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+
+        <span class="c1">// Solve the problem using the IK solver</span>
+        <span class="n">my_problem</span><span class="o">-&gt;</span><span class="n">setStartState</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
+        <span class="n">any_solver</span><span class="o">-&gt;</span><span class="n">Solve</span><span class="p">(</span><span class="n">solution</span><span class="p">);</span>
+
+        <span class="kt">double</span> <span class="n">time</span> <span class="o">=</span> <span class="n">ros</span><span class="o">::</span><span class="n">Duration</span><span class="p">((</span><span class="n">ros</span><span class="o">::</span><span class="n">WallTime</span><span class="o">::</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">).</span><span class="n">toSec</span><span class="p">()).</span><span class="n">toSec</span><span class="p">();</span>
+        <span class="n">ROS_INFO_STREAM_THROTTLE</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="s">&quot;Finished solving in &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">time</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;s. Solution [&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">solution</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;]&quot;</span><span class="p">);</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">solution</span><span class="p">.</span><span class="n">row</span><span class="p">(</span><span class="n">solution</span><span class="p">.</span><span class="n">rows</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+
+        <span class="n">my_problem</span><span class="o">-&gt;</span><span class="n">Update</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
+        <span class="n">my_problem</span><span class="o">-&gt;</span><span class="n">getScene</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getSolver</span><span class="p">().</span><span class="n">publishFrames</span><span class="p">();</span>
+
+        <span class="n">ros</span><span class="o">::</span><span class="n">spinOnce</span><span class="p">();</span>
+        <span class="n">loop_rate</span><span class="p">.</span><span class="n">sleep</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="c1">// All classes will be destroyed at this point.</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">,</span> <span class="s">&quot;ExoticaManualInitializationExampleNode&quot;</span><span class="p">);</span>
+    <span class="n">ROS_INFO_STREAM</span><span class="p">(</span><span class="s">&quot;Started&quot;</span><span class="p">);</span>
+
+    <span class="c1">// Run demo code</span>
+    <span class="n">run</span><span class="p">();</span>
+
+    <span class="c1">// Clean up</span>
+    <span class="c1">// Run this only after all the exoica classes have been disposed of!</span>
+    <span class="n">Setup</span><span class="o">::</span><span class="n">Destroy</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="rubric">CODE EXPLAINED</p>
+<div class="section" id="including-solvers-and-task-maps">
+<h2>Including Solvers and Task Maps<a class="headerlink" href="#including-solvers-and-task-maps" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial we will be setting up an <code class="docutils literal notranslate"><span class="pre">UnconstrainedEndPoseProblem</span></code> and
+solving it using an IKSolver using the <code class="docutils literal notranslate"><span class="pre">EffFrame</span></code> task map. To do this we
+need to include the correct header files:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;exotica/Exotica.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// Manual initialization requires dependency on specific solvers and task maps:</span>
+<span class="cp">#include</span> <span class="cpf">&lt;ik_solver/IKsolverInitializer.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;task_map/EffFrameInitializer.h&gt;</span><span class="cp"></span>
+</pre></div>
+</div>
+<p>Problem definitions are handled in the <code class="docutils literal notranslate"><span class="pre">exotica/Exotica.h</span></code> header, so we only need to
+include the <code class="docutils literal notranslate"><span class="pre">IKsolverInitializer</span></code> and <code class="docutils literal notranslate"><span class="pre">EffFrameInitializer</span></code>.</p>
+<p>To use other solvers and task maps just include the appropriate headers in the same
+format.</p>
+</div>
+<div class="section" id="ros-initialization">
+<h2>ROS Initialization<a class="headerlink" href="#ros-initialization" title="Permalink to this headline">¶</a></h2>
+<p>ROS can either be set up manually or you can use the EXOTica Server.</p>
+<p>To use the EXOTica Server, it needs to be setup using the <code class="docutils literal notranslate"><span class="pre">InitRos</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Server</span><span class="o">::</span><span class="n">InitRos</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">ros</span><span class="o">::</span><span class="n">NodeHandle</span><span class="o">&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">ros</span><span class="o">::</span><span class="n">NodeHandle</span><span class="p">(</span><span class="s">&quot;~&quot;</span><span class="p">)));</span>
+</pre></div>
+</div>
+<p>Where we provide a name for the ROS node (here we give the name “~”)</p>
+</div>
+<div class="section" id="scene-setup">
+<h2>Scene Setup<a class="headerlink" href="#scene-setup" title="Permalink to this headline">¶</a></h2>
+<p>To construct a problem, we first need a <code class="docutils literal notranslate"><span class="pre">Scene</span></code>, a <code class="docutils literal notranslate"><span class="pre">map</span></code> and parameters.</p>
+<p>Here we set up the Scene:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Scene using joint group &#39;arm&#39;</span>
+<span class="n">SceneInitializer</span> <span class="n">scene</span><span class="p">(</span><span class="s">&quot;MyScene&quot;</span><span class="p">,</span> <span class="s">&quot;arm&quot;</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;{exotica_examples}/resources/robots/lwr_simplified.urdf&quot;</span><span class="p">,</span> <span class="s">&quot;</span>
+</pre></div>
+</div>
+<p>Where we give the SceneInitializer a name (“MyScene”), the name of the joint group (“arm”)
+which is the same name as the group in the SRDF file. This is followed by the debug argument,
+robot description and the path to the URDF file.</p>
+</div>
+<div class="section" id="map-setup">
+<h2>Map Setup<a class="headerlink" href="#map-setup" title="Permalink to this headline">¶</a></h2>
+<p>Next up for the problem setup is the map setup. Here we are interested solving
+an end effector planning problem, so we require an end effector mapping.</p>
+<p>Here we have the option of specifying an interest in the end effector position
+using the EffPositionInitializer, the orientation of the end effector using the
+EffOrientationInitializer or both, using the EffFrameInitializer. Let’s try the
+EffFrame map, where specify a goal for both the position and orientation of the
+end effector</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">EffFrameInitializer</span> <span class="nf">map</span><span class="p">(</span><span class="s">&quot;Position&quot;</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="p">{</span><span class="n">FrameInitializer</span><span class="p">(</span><span class="s">&quot;lwr_arm_6_link&quot;</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorTransform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.7071067811865476</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.3297802811774664e-17</span><span class="p">,</span> <span class="mf">0.7071067811865475</span><span class="p">,</span> <span class="mf">4.3297802811774664e-17</span><span class="p">))});</span>
+</pre></div>
+</div>
+<p>Where we pass in:</p>
+<ul class="simple">
+<li>Name of the task map ( here we use “Position”)</li>
+<li>Debug argument</li>
+<li><dl class="first docutils">
+<dt>FrameInitializer</dt>
+<dd><ul class="first last">
+<li>Name of the end effector link (here we use “lwr_arm_6_link” for the lwr_simplified arm)</li>
+<li>Optional offset from that link</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="problem-and-solver-initialization">
+<h2>Problem and Solver Initialization<a class="headerlink" href="#problem-and-solver-initialization" title="Permalink to this headline">¶</a></h2>
+<p>Now we have the Scene and Map(s) (multiple maps can be added) initialized, we can set up the
+problem. First we need to create an initializer:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">UnconstrainedEndPoseProblemInitializer</span> <span class="nf">problem</span><span class="p">(</span><span class="s">&quot;MyProblem&quot;</span><span class="p">,</span> <span class="n">scene</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="p">{</span><span class="n">map</span><span class="p">},</span> <span class="n">W</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>To do this, we simply call the initializer for the problem we want, giving the initializer a name
+(here we use “problem”), then giving the problem a name (here: “MyProblem”). Then pass the scene,
+a debug argument, the map and the parameter (here: “W” as a cost cost weighting for the motion of
+each joint).</p>
+<p>We can then create the initializer for the solver. To do this, we can simply name (“solver”) and
+create an initializer, give the solver itself a name (“MySolver”) then set the parameters later:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">IKsolverInitializer</span> <span class="nf">solver</span><span class="p">(</span><span class="s">&quot;MySolver&quot;</span><span class="p">);</span>
+<span class="n">solver</span><span class="p">.</span><span class="n">C</span> <span class="o">=</span> <span class="mf">1e-3</span><span class="p">;</span>
+<span class="n">solver</span><span class="p">.</span><span class="n">MaxIterations</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">solver</span><span class="p">.</span><span class="n">MaxStep</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>or parameters can be set in arguments to the initializer. See
+<a class="reference external" href="https://github.com/ipab-slmc/exotica/tree/master/exotica/init">initialization files</a> for
+details of each solver’s options.</p>
+<p>The next step is to send the problem and solver to the Planning and Motion Solver pointer
+containers. Here use the name of the initializer, not the names of the problems and solvers.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">PlanningProblem_ptr</span> <span class="n">any_problem</span> <span class="o">=</span> <span class="n">Setup</span><span class="o">::</span><span class="n">createProblem</span><span class="p">(</span><span class="n">problem</span><span class="p">);</span>
+<span class="n">MotionSolver_ptr</span> <span class="n">any_solver</span> <span class="o">=</span> <span class="n">Setup</span><span class="o">::</span><span class="n">createSolver</span><span class="p">(</span><span class="n">solver</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sending-problem-to-solvers">
+<h2>Sending Problem to Solvers<a class="headerlink" href="#sending-problem-to-solvers" title="Permalink to this headline">¶</a></h2>
+<p>We now have our problem set up, containing all the information about the robot, task etc.
+and we have a solver setup, waiting to solve some motion plans, but they don’t know about
+each other. Let’s now send the problem to the solver:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">any_solver</span><span class="o">-&gt;</span><span class="n">specifyProblem</span><span class="p">(</span><span class="n">any_problem</span><span class="p">);</span>
+<span class="n">UnconstrainedEndPoseProblem_ptr</span> <span class="n">my_problem</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">static_pointer_cast</span><span class="o">&lt;</span><span class="n">UnconstrainedEndPoseProblem</span><span class="o">&gt;</span><span class="p">(</span><span class="n">any_problem</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>When sending the problem to the solver, we use the pointers we created in the last step, named: “any_problem” and
+“any_solver”:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">any_solver</span><span class="o">-&gt;</span><span class="n">specifyProblem</span><span class="p">(</span><span class="n">any_problem</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Finally, we pop the problem back into a specific problem pointer to be used later:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">UnconstrainedEndPoseProblem_ptr</span> <span class="n">my_problem</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">static_pointer_cast</span><span class="o">&lt;</span><span class="n">UnconstrainedEndPoseProblem</span><span class="o">&gt;</span><span class="p">(</span><span class="n">any_problem</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This procedure applies to all problems and solvers, but the parameters for each will vary.
+Please refer to the <a class="reference external" href="https://github.com/ipab-slmc/exotica/tree/master/exotica/init">initialization files</a>
+for setup details for each.</p>
+<p>Also, multiple problems can be initialized and sent to solvers in a single script, they just need unique names
+to do so.</p>
+<p>And that’s the problem set up. We can now start to use EXOTica to solve motion plans, which we will look
+at in the next tutorial.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Using-EXOTica.html" class="btn btn-neutral float-right" title="Using EXOTica" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Quickstart-cpp.html" class="btn btn-neutral" title="Quickstart: C++" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Vladimir Ivan, Yiming Yang, Wolfgang Merkt, Michael Camilleri, Sethu Vijayakumar - and contributors.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'5.0-beta1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

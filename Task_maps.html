@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Task Maps &mdash; EXOTica 5.0-beta1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Code Formatting" href="Code-Formatting.html" />
+    <link rel="prev" title="Initializers" href="Initializers.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EXOTica
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-python.html">Quickstart: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quickstart-cpp.html">Quickstart: C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-problems-and-solvers.html">Setting up Problems and Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-EXOTica.html">Using EXOTica</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Getting-Started-With-Your-Own-Robot.html">Getting Started With Your Own Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Initialization.html">Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XML.html">XML Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XML-Parsing.html">XML Parsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Manual-Initialization.html">Manual Initialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Common-Initialization-Step.html">Common Initialization Step</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Setting-up-ROSlaunch.html">Setting up ROSlaunch</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Initializers.html">Initializers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Task Maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#initializing-task-maps">Initializing task maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#com">CoM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#distance">Distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#efforientation">EffOrientation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#effposition">EffPosition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#effframe">EffFrame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#imesh">IMesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#identity">Identity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jointlimit">JointLimit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sphere">Sphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spherecollision">SphereCollision</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#using-task-maps">Using Task Maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#c">C++</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Code-Formatting.html">Code Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python-API.html">Python Bindings</a></li>
+<li class="toctree-l1"><a class="reference external" href="./doxygen_cpp/index.html#http://">Doxygen C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EXOTica</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Task Maps</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="task-maps">
+<h1>Task Maps<a class="headerlink" href="#task-maps" title="Permalink to this headline">¶</a></h1>
+<p>Task maps form the basis of all Problems in EXOTica; they provide a mapping from configuration space to task space. A problem can contain one or many task maps.
+For example, if the problem requires the effector to reach a goal position with no concern for orientation we might use the end-effector position task map:
+<cite>EffPosition</cite>. Whereas if we are only concerned with orientation, we would use the ‘EffOrientation’ map. If we care about both position and orientation we can
+send BOTH the ‘EffPosition’ AND the ‘EffOrientation’ task maps to the problem or we can use the ‘EffFrame’ task map, which contains both positional and orientation mapping.</p>
+<p>The ability to specify multiple task maps enables a wide range of customization for each problem. As well as being able to specify what frame and joint is of interest,
+we can add collision detection arguments, joint limit constraints or centre of mass location among others individually or collectively to problems.</p>
+<p>In this tutorial we explain each of the task maps and detail the input arguments needed to instantiate the task maps.</p>
+<div class="section" id="initializing-task-maps">
+<h2>Initializing task maps<a class="headerlink" href="#initializing-task-maps" title="Permalink to this headline">¶</a></h2>
+<p>Each task map needs to be initialized first, this sets up the task map and specifies any important parameters. After initialization we can send the the task map to
+the problem.</p>
+<div class="section" id="com">
+<h3>CoM<a class="headerlink" href="#com" title="Permalink to this headline">¶</a></h3>
+<p>Specify the CoM for a link</p>
+<p>Initialization:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Name_</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">Debug_</span> <span class="o">=</span>  <span class="nb">false</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span> <span class="n">EndEffector_</span> <span class="o">=</span>  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span><span class="p">(),</span> <span class="kt">bool</span> <span class="n">EnableZ_</span> <span class="o">=</span>  <span class="nb">true</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="distance">
+<h3>Distance<a class="headerlink" href="#distance" title="Permalink to this headline">¶</a></h3>
+<p>Returns the distance between two frames, either an end effector frame or a point frame.</p>
+<p>Initialization:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Name_</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">Debug_</span> <span class="o">=</span>  <span class="nb">false</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span> <span class="n">EndEffector_</span> <span class="o">=</span>  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="efforientation">
+<h3>EffOrientation<a class="headerlink" href="#efforientation" title="Permalink to this headline">¶</a></h3>
+<p>Specifies an end effector orientation in task space</p>
+<p>Initialization:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Name_</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">Debug_</span> <span class="o">=</span>  <span class="nb">false</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span> <span class="n">EndEffector_</span> <span class="o">=</span>  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span>       <span class="n">Type_</span> <span class="o">=</span>  <span class="s">&quot;RPY&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="effposition">
+<h3>EffPosition<a class="headerlink" href="#effposition" title="Permalink to this headline">¶</a></h3>
+<p>Specifies an end effector position in task space</p>
+<p>Initialization:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Name_</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">Debug_</span> <span class="o">=</span>  <span class="nb">false</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span> <span class="n">EndEffector_</span> <span class="o">=</span>  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="effframe">
+<h3>EffFrame<a class="headerlink" href="#effframe" title="Permalink to this headline">¶</a></h3>
+<p>Specifies an end effector pose in task space</p>
+<p>Initialization:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Name_</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">Debug_</span> <span class="o">=</span>  <span class="nb">false</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span> <span class="n">EndEffector_</span> <span class="o">=</span>  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Type_</span> <span class="o">=</span>  <span class="s">&quot;RPY&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="imesh">
+<h3>IMesh<a class="headerlink" href="#imesh" title="Permalink to this headline">¶</a></h3>
+<p>See <a class="reference external" href="http://homepages.inf.ed.ac.uk/svijayak/publications/ivan-IJRR2013.pdf">http://homepages.inf.ed.ac.uk/svijayak/publications/ivan-IJRR2013.pdf</a> for details about iMesh</p>
+<p>Initialization:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Name_</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">Debug_</span> <span class="o">=</span>  <span class="nb">false</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span> <span class="n">EndEffector_</span> <span class="o">=</span>  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">ReferenceFrame_</span> <span class="o">=</span>  <span class="s">&quot;/world&quot;</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="n">Weights_</span> <span class="o">=</span>  <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="identity">
+<h3>Identity<a class="headerlink" href="#identity" title="Permalink to this headline">¶</a></h3>
+<p>The position of a joint. Useful if you want to avoid a certain position.</p>
+<p>Initialization:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Name_</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">Debug_</span> <span class="o">=</span>  <span class="nb">false</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span> <span class="n">EndEffector_</span> <span class="o">=</span>  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="n">JointRef_</span><span class="o">=</span><span class="p">{},</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">JointMap_</span><span class="o">=</span><span class="p">{})</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="jointlimit">
+<h3>JointLimit<a class="headerlink" href="#jointlimit" title="Permalink to this headline">¶</a></h3>
+<p>Map to keep joints away from limits. Use options to set penalties for nearing joint limits</p>
+<p>Initialization:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Name_</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">Debug_</span> <span class="o">=</span>  <span class="nb">false</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span> <span class="n">EndEffector_</span> <span class="o">=</span>  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span><span class="p">(),</span> <span class="kt">double</span> <span class="n">SafePercentage_</span> <span class="o">=</span>  <span class="mf">0.0</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">RobotDescription_</span> <span class="o">=</span>  <span class="s">&quot;robot_description&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sphere">
+<h3>Sphere<a class="headerlink" href="#sphere" title="Permalink to this headline">¶</a></h3>
+<p>Initiates a sphere object in relation to a named link with an offset - acts as a primitive for collision SphereCollision</p>
+<p>Initialization:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Link_</span><span class="p">,</span> <span class="kt">double</span> <span class="n">Radius_</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="n">LinkOffset_</span> <span class="o">=</span>  <span class="n">Eigen</span><span class="o">::</span><span class="n">IdentityTransform</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Base_</span> <span class="o">=</span>  <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="n">BaseOffset_</span> <span class="o">=</span>  <span class="n">Eigen</span><span class="o">::</span><span class="n">IdentityTransform</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Group_</span> <span class="o">=</span>  <span class="s">&quot;default&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="spherecollision">
+<h3>SphereCollision<a class="headerlink" href="#spherecollision" title="Permalink to this headline">¶</a></h3>
+<p>Used in collision detection. Groups of spheres (seen in previous bullet point) are attached to the robot and environment.
+Spheres within the same group will not detect collisions within each other , but collisions between different groups are detected.</p>
+<p>Initialization:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Name_</span><span class="p">,</span> <span class="kt">double</span> <span class="n">Precision_</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">Debug_</span> <span class="o">=</span>  <span class="nb">false</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span> <span class="n">EndEffector_</span> <span class="o">=</span>  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">exotica</span><span class="o">::</span><span class="n">Initializer</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">ReferenceFrame_</span> <span class="o">=</span>  <span class="s">&quot;/world&quot;</span><span class="p">,</span> <span class="kt">double</span> <span class="n">Alpha_</span> <span class="o">=</span>  <span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-task-maps">
+<h2>Using Task Maps<a class="headerlink" href="#using-task-maps" title="Permalink to this headline">¶</a></h2>
+<p>Once we’ve chosen and initialized the task maps we’re interested in they need to be sent to the problem. The problem then informs the solver that these things must be taken into
+consideration when producing a motion plan. Each problem can handle one of many task maps. Let’s look at how we send these to the problem.</p>
+<div class="section" id="c">
+<h3>C++<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h3>
+<p>In the snippet below, we see that we have created a task map named <code class="docutils literal notranslate"><span class="pre">map</span></code> , which is an end effector frame map. We send this to the problem in the appropriate argument place using
+the curly brackets <code class="docutils literal notranslate"><span class="pre">{map}</span></code>. In this snippet we assume you have already created a <code class="docutils literal notranslate"><span class="pre">scene</span></code> and <code class="docutils literal notranslate"><span class="pre">W</span></code> initializer:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">EffFrameInitializer</span> <span class="nf">map</span><span class="p">(</span><span class="s">&quot;Position&quot;</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span>
+                        <span class="p">{</span><span class="n">FrameInitializer</span><span class="p">(</span><span class="s">&quot;lwr_arm_6_link&quot;</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorTransform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.7071067811865476</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.3297802811774664e-17</span><span class="p">,</span> <span class="mf">0.7071067811865475</span><span class="p">,</span> <span class="mf">4.3297802811774664e-17</span><span class="p">))});</span>
+
+<span class="n">UnconstrainedEndPoseProblemInitializer</span> <span class="nf">problem</span><span class="p">(</span><span class="s">&quot;MyProblem&quot;</span><span class="p">,</span> <span class="n">scene</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="p">{</span><span class="n">map</span><span class="p">},</span> <span class="n">W</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>By placing multiple map variable names inside these curly brackets, we can specify several maps to be sent to the same problem (this sets joint limits for the
+<a class="reference external" href="https://github.com/ipab-slmc/exotica/blob/master/examples/exotica_examples/resources/robots/lwr_simplified.urdf">LWR_simplified</a>  arm in the examples):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">get_joint_limits</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Initializer</span><span class="o">&gt;</span> <span class="n">joint_store</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">joint_store</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">EffFrameInitializer</span><span class="p">(</span><span class="s">&quot;Position&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">,{</span><span class="n">FrameInitializer</span><span class="p">(</span><span class="s">&quot;lwr_arm_0_link&quot;</span><span class="p">)})});</span>
+    <span class="n">joint_store</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">EffFrameInitializer</span><span class="p">(</span><span class="s">&quot;Position&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">,{</span><span class="n">FrameInitializer</span><span class="p">(</span><span class="s">&quot;lwr_arm_1_link&quot;</span><span class="p">)})});</span>
+    <span class="n">joint_store</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">EffFrameInitializer</span><span class="p">(</span><span class="s">&quot;Position&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">,{</span><span class="n">FrameInitializer</span><span class="p">(</span><span class="s">&quot;lwr_arm_2_link&quot;</span><span class="p">)})});</span>
+    <span class="n">joint_store</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">EffFrameInitializer</span><span class="p">(</span><span class="s">&quot;Position&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">,{</span><span class="n">FrameInitializer</span><span class="p">(</span><span class="s">&quot;lwr_arm_3_link&quot;</span><span class="p">)})});</span>
+    <span class="n">joint_store</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">EffFrameInitializer</span><span class="p">(</span><span class="s">&quot;Position&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">,{</span><span class="n">FrameInitializer</span><span class="p">(</span><span class="s">&quot;lwr_arm_4_link&quot;</span><span class="p">)})});</span>
+    <span class="n">joint_store</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">EffFrameInitializer</span><span class="p">(</span><span class="s">&quot;Position&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">,{</span><span class="n">FrameInitializer</span><span class="p">(</span><span class="s">&quot;lwr_arm_5_link&quot;</span><span class="p">)})});</span>
+    <span class="n">joint_store</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">EffFrameInitializer</span><span class="p">(</span><span class="s">&quot;Position&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">,{</span><span class="n">FrameInitializer</span><span class="p">(</span><span class="s">&quot;lwr_arm_6_link&quot;</span><span class="p">)})});</span>
+<span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Initializer</span><span class="o">&gt;</span> <span class="n">joint_store</span><span class="p">;</span>
+    <span class="n">get_joint_limits</span><span class="p">(</span><span class="n">joint_store</span><span class="p">);</span>
+
+<span class="n">JointLimitInitializer</span> <span class="nf">joint_map</span><span class="p">(</span><span class="s">&quot;joint_limits&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">,</span><span class="n">joint_store</span><span class="p">,</span><span class="mf">90.0</span><span class="p">);</span>
+
+<span class="n">EffFrameInitializer</span> <span class="nf">eff_map</span><span class="p">(</span><span class="s">&quot;Position&quot;</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span>
+                        <span class="p">{</span><span class="n">FrameInitializer</span><span class="p">(</span><span class="s">&quot;lwr_arm_6_link&quot;</span><span class="p">,</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorTransform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.7071067811865476</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.3297802811774664e-17</span><span class="p">,</span> <span class="mf">0.7071067811865475</span><span class="p">,</span> <span class="mf">4.3297802811774664e-17</span><span class="p">))});</span>
+
+<span class="n">UnconstrainedEndPoseProblemInitializer</span> <span class="nf">problem</span><span class="p">(</span><span class="s">&quot;MyProblem&quot;</span><span class="p">,</span> <span class="n">scene</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="p">{</span><span class="n">eff_map</span><span class="p">,</span><span class="n">joint_map</span><span class="p">},</span> <span class="n">W</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Further task maps can then be added in the same way. These can now be sent to the solver.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Code-Formatting.html" class="btn btn-neutral float-right" title="Code Formatting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Initializers.html" class="btn btn-neutral" title="Initializers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Vladimir Ivan, Yiming Yang, Wolfgang Merkt, Michael Camilleri, Sethu Vijayakumar - and contributors.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'5.0-beta1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
