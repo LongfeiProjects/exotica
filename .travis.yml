@@ -4,7 +4,6 @@ services:
   - docker
 language: generic
 env:
-  - ROS_PARALLEL_JOBS='-j4'
   matrix:
 #    - ROS_DISTRO="indigo" ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu NOT_TEST_BUILD=true NOT_TEST_INSTALL=true
 #    - ROS_DISTRO="indigo" ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu NOT_TEST_BUILD=true NOT_TEST_INSTALL=true
