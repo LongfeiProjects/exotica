@@ -12,7 +12,7 @@ env:
     - ROS_DISTRO="kinetic"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu
     - ROS_DISTRO="kinetic"  PRERELEASE=true
     - ROS_DISTRO="melodic"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu
-    - ROS_DISTRO="melodic"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu
+    - ROS_DISTRO="melodic"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu  ROSINSTALL_FILENAME=exotica.rosinstall
     - ROS_DISTRO="melodic"  PRERELEASE=true
 # matrix:
 #   allow_failures:
